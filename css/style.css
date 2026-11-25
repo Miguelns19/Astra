@@ -1,0 +1,200 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(circle at 7% 18%, rgba(255, 255, 255, 0.8) 0 1px, transparent 2px),
+        radial-gradient(circle at 16% 42%, rgba(255, 255, 255, 0.6) 0 1.2px, transparent 2.2px),
+        radial-gradient(circle at 28% 30%, rgba(167, 139, 250, 0.5) 0 1px, transparent 2px),
+        radial-gradient(circle at 34% 70%, rgba(255, 255, 255, 0.7) 0 1px, transparent 2px),
+        radial-gradient(circle at 48% 22%, rgba(255, 255, 255, 0.5) 0 1.4px, transparent 2.4px),
+        radial-gradient(circle at 57% 58%, rgba(167, 139, 250, 0.35) 0 1px, transparent 2px),
+        radial-gradient(circle at 63% 14%, rgba(255, 255, 255, 0.8) 0 1px, transparent 2px),
+        radial-gradient(circle at 72% 37%, rgba(255, 255, 255, 0.5) 0 1.2px, transparent 2.2px),
+        radial-gradient(circle at 81% 68%, rgba(167, 139, 250, 0.35) 0 1px, transparent 2px),
+        radial-gradient(circle at 90% 24%, rgba(255, 255, 255, 0.7) 0 1px, transparent 2px),
+        radial-gradient(circle at 12% 78%, rgba(255, 255, 255, 0.6) 0 1px, transparent 2px),
+        radial-gradient(circle at 25% 88%, rgba(167, 139, 250, 0.3) 0 1px, transparent 2px),
+        radial-gradient(circle at 44% 84%, rgba(255, 255, 255, 0.8) 0 1.1px, transparent 2.1px),
+        radial-gradient(circle at 60% 80%, rgba(255, 255, 255, 0.5) 0 1px, transparent 2px),
+        radial-gradient(circle at 76% 90%, rgba(255, 255, 255, 0.7) 0 1px, transparent 2px),
+        radial-gradient(circle at 88% 76%, rgba(167, 139, 250, 0.35) 0 1px, transparent 2px),
+        radial-gradient(circle at 15% 30%, rgba(120, 45, 200, 1.00), transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(30, 100, 220, 0.78), transparent 45%),
+        linear-gradient(135deg, #080d20, #17102e, #101e3d);
+
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #a78bfa;
+    text-align: center;
+    font-size: 75px;
+}
+
+p {
+    color: #b8c2df;
+    text-align: center;
+    font-size: 20px;
+}
+
+.apresentacao {
+    padding: 75px 20px;
+}
+
+.planetas {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.planetas h2 {
+    color: #a78bfa;
+    font-size: 36px;
+}
+
+.card-planeta {
+    background-color: rgba(20, 29, 57, 0.25);
+    padding: 20px;
+    max-width: 300px;
+    margin: 20px 0;
+    border: 1px solid rgba(167, 139, 250, 0.15);
+    backdrop-filter: blur(2px);
+}
+
+.lista-planetas {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.imagem-planeta {
+    width: 250px;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    animation: girar 30s linear infinite;
+    animation-play-state: paused;
+}
+
+.imagem-planeta:hover {
+    animation-play-state: running;
+    transform: scale(1.2);
+}
+
+.terra:hover {
+    filter: drop-shadow(0 0 30px rgba(89, 253, 133, 0.35));
+}
+
+.marte:hover {
+    filter: drop-shadow(0 0 30px rgba(255, 55, 0, 0.35));
+}
+
+@keyframes girar {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    border-bottom: 1px solid #293451;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #080d20;
+}
+
+.logo {
+   font-size: 30px;
+   margin: 0;
+   letter-spacing: 5px;
+   background: linear-gradient(90deg, #a78bfa, #60a5fa);
+   background-clip: text;
+   color: transparent;
+   filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.3));
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #b8c2df;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.4s ease, filter 0.4s ease;
+}
+
+nav a:hover {
+    color: #a78bfa;
+    filter: drop-shadow(0 0 8px rgb(167, 139, 250, 0.6));
+}
+
+.ceu {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+.estrela {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #ffffff;
+    animation: pulsar 5s ease-in-out infinite;
+}
+
+.estrela1 {
+    top: 25%;
+    left: 12%;
+    animation-delay: 0s;
+}
+
+.estrela2 {
+    top: 40%;
+    left: 85%;
+    animation-delay: 2s;
+}
+
+.estrela3 {
+    top: 75%;
+    left: 23%;
+    animation-delay: 1s;
+}
+
+.estrela4 {
+    top: 20%;
+    left: 68%;
+    animation-delay: 3s;
+}
+
+.estrela5 {
+    top: 85%;
+    left: 92%;
+    animation-delay: 4s;
+}
+
+@keyframes pulsar {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.9;
+    }
+}
