@@ -20,18 +20,23 @@ body {
         radial-gradient(circle at 60% 80%, rgba(255, 255, 255, 0.5) 0 1px, transparent 2px),
         radial-gradient(circle at 76% 90%, rgba(255, 255, 255, 0.7) 0 1px, transparent 2px),
         radial-gradient(circle at 88% 76%, rgba(167, 139, 250, 0.35) 0 1px, transparent 2px),
-        radial-gradient(circle at 15% 30%, rgba(120, 45, 200, 1.00), transparent 40%),
-        radial-gradient(circle at 85% 65%, rgba(30, 100, 220, 0.78), transparent 45%),
-        linear-gradient(135deg, #080d20, #17102e, #101e3d);
+        radial-gradient(circle at 15% 30%, rgb(0, 0, 0), transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(0, 0, 0, 0.78), transparent 45%),
+        linear-gradient(135deg, #111a3b, #000000, rgb(51, 51, 51));
 
     color: white;
     font-family: Arial, sans-serif;
     margin: 0;
-    min-height: 100vh;
+    min-height: 1000vh;
+}
+
+body a{
+    text-decoration: none;
+    color: currentColor;
 }
 
 h1 {
-    color: #a78bfa;
+    color: #ffffff;
     text-align: center;
     font-size: 75px;
 }
@@ -52,17 +57,16 @@ p {
 }
 
 .planetas h2 {
-    color: #a78bfa;
+    color: #ffffff;
     font-size: 36px;
 }
 
 .card-planeta {
-    background-color: rgba(20, 29, 57, 0.25);
     padding: 20px;
     max-width: 300px;
     margin: 20px 0;
-    border: 1px solid rgba(167, 139, 250, 0.15);
     backdrop-filter: blur(2px);
+    transition: 300ms;
 }
 
 .lista-planetas {
@@ -86,31 +90,22 @@ p {
     transform: scale(1.2);
 }
 
-.terra:hover {
+/* .terra:hover {
     filter: drop-shadow(0 0 30px rgba(89, 253, 133, 0.35));
 }
 
 .marte:hover {
     filter: drop-shadow(0 0 30px rgba(255, 55, 0, 0.35));
-}
+} */
 
-@keyframes girar {
-    from {
-        rotate: 0deg;
-    }
 
-    to {
-        rotate: 360deg;
-    }
-}
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    border-bottom: 1px solid #293451;
-
+    
     position: sticky;
     top: 0;
     z-index: 10;
@@ -118,13 +113,13 @@ header {
 }
 
 .logo {
-   font-size: 30px;
-   margin: 0;
-   letter-spacing: 5px;
-   background: linear-gradient(90deg, #a78bfa, #60a5fa);
-   background-clip: text;
-   color: transparent;
-   filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.3));
+    font-size: 30px;
+    margin: 0;
+    letter-spacing: 5px;
+    background: linear-gradient(90deg, #a78bfa, #60a5fa);
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.3));
 }
 
 nav {
@@ -190,11 +185,41 @@ nav a:hover {
     animation-delay: 4s;
 }
 
+.imagem-planeta-detail{
+    margin-left: -250px;
+    height: 900px;
+    animation: girar 120s linear infinite;
+    animation-play-state: running;
+}
+
+.main-detail{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.desc-planeta{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
 @keyframes pulsar {
     0%, 100% {
         opacity: 0.2;
     }
     50% {
         opacity: 0.9;
+    }
+}
+
+@keyframes girar {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
     }
 }
